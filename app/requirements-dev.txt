@@ -1,0 +1,16 @@
+-r requirements.txt
+
+black
+flake8
+isort
+mypy
+
+pytest
+pytest-cov
+moto[s3,awslambda]
+
+pre-commit
+
+awswrangler
+aws_xray_sdk
+aws-lambda-powertools
