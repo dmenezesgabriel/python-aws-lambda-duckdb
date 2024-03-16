@@ -1,16 +1,27 @@
 -r requirements.txt
 
-black
-flake8
-isort
-mypy
+black==24.2.0
+flake8==7.0.0
+isort==5.13.2
+mypy==1.9.0
 
-pytest
-pytest-cov
-moto[s3,awslambda]
+pandas-stubs
+types-PyYAML
+types-Pygments
+types-aws-xray-sdk
+types-colorama
+types-jmespath
+types-python-dateutil
+types-requests
+types-setuptools
+types-xmltodict
 
-pre-commit
+pytest==8.1.1
+pytest-cov==4.1.0
+moto[s3,awslambda]==5.0.3
 
-awswrangler
+pre-commit==3.6.2
+
+awswrangler==3.7.1
 aws_xray_sdk
-aws-lambda-powertools
+aws-lambda-powertools==2.35.1

@@ -1,1 +1,1 @@
-duckdb
+duckdb==0.10.0
