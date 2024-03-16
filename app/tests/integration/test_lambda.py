@@ -6,11 +6,6 @@ import pandas as pd
 from lambda_function import lambda_handler
 from pytest import TempPathFactory
 
-payload = {
-    "datasets": '[{"bucket": "test-bucket", "prefix": "test-prefix"}]',
-    "query": "SELECT * FROM test;",
-}
-
 
 class TestLambdaHandler:
 
