@@ -1,7 +1,9 @@
 name: pipeline
 
 on:
-  push:
+  - pull_request
+  - push
+  - workflow_dispatch
 
 jobs:
   unit-test:
@@ -9,7 +11,7 @@ jobs:
     runs-on: "${{ matrix.os }}"
 
     strategy:
-      fail-fast: false
+      fail-fast: true
       matrix:
         os:
           - ubuntu-latest
