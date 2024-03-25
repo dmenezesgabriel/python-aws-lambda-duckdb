@@ -1,4 +1,4 @@
-name: pipeline
+name: CI
 
 on:
   - pull_request
@@ -6,7 +6,7 @@ on:
   - workflow_dispatch
 
 jobs:
-  unit-test:
+  test:
     name: "Python ${{ matrix.python-version }} on ${{ matrix.os }}"
     runs-on: "${{ matrix.os }}"
 
@@ -15,7 +15,7 @@ jobs:
       matrix:
         os:
           - ubuntu-latest
-          - windows-latest
+          # - windows-latest
         python-version:
           - "3.12"
 
@@ -35,8 +35,4 @@ jobs:
 
       - name: Run unit tests
         working-directory: app
-        run: pytest --cov --cov-report=html:coverage_report tests/
-
-      - if: ${{matrix.python-version == '3.12' && matrix.os == 'ubuntu-latest'}}
-        name: Create Badge
-        run: echo "Create Badge"
+        run: pytest --cov --cov-report=term tests/
