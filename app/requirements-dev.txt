@@ -15,6 +15,7 @@ types-python-dateutil
 types-requests
 types-setuptools
 types-xmltodict
+boto3-stubs[lambda,s3]
 
 pytest==8.1.1
 pytest-cov==4.1.0

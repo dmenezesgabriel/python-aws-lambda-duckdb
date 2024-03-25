@@ -12,9 +12,7 @@ class Datasets(TypedDict):
     prefix: str
 
 
-def s3_parquet_to_df(
-    client: boto3.client, bucket: str, key: str
-) -> pd.DataFrame:
+def s3_parquet_to_df(client: Any, bucket: str, key: str) -> pd.DataFrame:
     try:
         object = client.get_object(Bucket=bucket, Key=key)
         data = object["Body"].read()
@@ -27,7 +25,7 @@ def s3_parquet_to_df(
 
 
 def s3_partitioned_parquet_to_df(
-    client: boto3.client, bucket: str, prefix: str
+    client: Any, bucket: str, prefix: str
 ) -> pd.DataFrame:
     try:
         paginator = client.get_paginator("list_objects_v2")
