@@ -1,0 +1,17 @@
+name: pipeline
+
+on:
+  push:
+
+jobs:
+  unit-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v4
+      - run: pip install -r app/requirements-dev.txt
+      - run: pytest
