@@ -5,15 +5,24 @@ repos:
         name: black
         language: system
         entry: bash -c '. venv/bin/activate && cd app && python -m black --line-length 79 .'
+        types: [python]
+        files: ^app/
       - id: flake8
         name: flake8
         language: system
         entry: bash -c '. venv/bin/activate && cd app && python -m flake8 .'
+        types: [python]
+        files: ^app/
       - id: mypy
         name: mypy
         language: system
         entry: bash -c '. venv/bin/activate && cd app && python -m mypy .'
+        types: [python]
+        files: ^app/
       - id: pytest
         name: pytest
         language: system
+        pass_filenames: false
         entry: bash -c '. venv/bin/activate && cd app && python -m pytest .'
+        types: [python]
+        files: ^app/
