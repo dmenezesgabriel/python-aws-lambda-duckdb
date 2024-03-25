@@ -30,3 +30,7 @@ pytest --cov --cov-report=html:coverage_report tests/
   ```sh
   gh act
   ```
+
+## Resources
+
+- [Making a coverage badge](https://nedbatchelder.com/blog/202209/making_a_coverage_badge.html)
