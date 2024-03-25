@@ -34,3 +34,7 @@ jobs:
       - name: Run unit tests
         working-directory: app
         run: pytest --cov --cov-report=html:coverage_report tests/
+
+      - if: ${{matrix.python-version == '3.12' && matrix.os == 'ubuntu-latest'}}
+        name: Create Badge
+        run: echo "Create Badge"
