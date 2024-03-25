@@ -1,0 +1,19 @@
+repos:
+  - repo: local
+    hooks:
+      - id: black
+        name: black
+        language: system
+        entry: bash -c '. venv/bin/activate && cd app && python -m black --line-length 79 .'
+      - id: flake8
+        name: flake8
+        language: system
+        entry: bash -c '. venv/bin/activate && cd app && python -m flake8 .'
+      - id: mypy
+        name: mypy
+        language: system
+        entry: bash -c '. venv/bin/activate && cd app && python -m mypy .'
+      - id: pytest
+        name: pytest
+        language: system
+        entry: bash -c '. venv/bin/activate && cd app && python -m pytest .'

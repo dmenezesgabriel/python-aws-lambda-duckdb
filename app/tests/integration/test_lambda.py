@@ -13,7 +13,7 @@ class TestLambdaHandler:
     def test_lambda_handler_integration(
         self, context: MagicMock, tmp_path: TempPathFactory
     ) -> None:
-        parquet_file_path = tmp_path / "test.parquet"
+        parquet_file_path = tmp_path / "test.parquet"  # type: ignore
         _df = pd.DataFrame({"name": ["Alice", "Bob"], "age": [30, 35]})
         _df.to_parquet(parquet_file_path)
 
