@@ -26,16 +26,17 @@ class TestLambdaHandler:
         )
 
         event = {
-            "datasets": '[{"bucket": "test_bucket", "prefix": "test_prefix"}]',
+            "datasets": [{"bucket": "test_bucket", "prefix": "test_prefix"}],
             "query": "SELECT * FROM test_prefix;",
         }
 
         response = lambda_handler(event, context)
 
         expected_response = {
-            "result": (
-                '[{"name": "Alice", "age": 30}, {"name": "Bob", "age": 35}]'
-            )
+            "result": [
+                {"name": "Alice", "age": 30},
+                {"name": "Bob", "age": 35},
+            ]
         }
 
         assert response == expected_response

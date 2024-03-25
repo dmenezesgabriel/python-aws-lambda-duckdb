@@ -21,12 +21,12 @@ def lambda_handler(
                 "error": "Invalid input: 'datasets' and 'query' are required"
             }
 
-        datasets: List[Datasets] = json.loads(event["datasets"])
+        datasets: List[Datasets] = event["datasets"]
         query: str = event["query"]
 
         result = run_query(datasets, query)
 
-        msg = {"result": json.dumps(result)}
+        msg = {"result": result}
         return msg
 
     except json.JSONDecodeError as e:
